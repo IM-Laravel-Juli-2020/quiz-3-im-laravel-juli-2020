@@ -18,5 +18,29 @@ class ProyekController extends Controller
     public function create(){
 
     }
+
+    public function daftarstafbaru(){
+
+    }
+
+    public function savenewproyek(){
+
+    }
+
+    public function saveproyekwithstaff(){
+
+    }
+
+    public function infoedit(){
+
+    }
+
+    public function saveeditproyek(){
+
+    }
+    
+    public function destroy(){
+
+    }
 }
 

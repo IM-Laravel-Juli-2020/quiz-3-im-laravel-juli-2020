@@ -28,3 +28,5 @@ Route::get('/', 'ProyekController@index');
 Route::get('/proyek', 'ProyekController@proyek');
 
 Route::get('/proyek/create', 'ProyekController@create');
+
+Route::get('/proyek/{id}/daftarkan-staff', 'ProyekController@daftarstafbaru');
