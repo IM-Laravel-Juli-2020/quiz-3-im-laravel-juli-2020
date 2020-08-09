@@ -12,13 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('sbadmin2.content.index');
 });
 
-Route::get('/items/create', 'ItemController@create'); // menampilkan halaman form
-Route::post('/items', 'ItemController@store'); // menyimpan data
-Route::get('/items', 'ItemController@index'); // menampilkan semua
-Route::get('/items/{id}', 'ItemController@show'); // menampilkan detail item dengan id 
-Route::get('/items/{id}/edit', 'ItemController@edit'); // menampilkan form untuk edit item
-Route::put('/items/{id}', 'ItemController@update'); // menyimpan perubahan dari form edit
-Route::delete('/items/{id}', 'ItemController@destroy'); // menghapus data dengan id
+Route::get('/proyek', 'ProyekController@index'); // menampilkan halaman form
+Route::get('/proyek/create', 'ProyekController@create'); // menampilkan halaman form
+Route::post('/proyek', 'ProyekController@store');
+Route::get('/proyek/{id}', 'ProyekController@show');
+Route::get('/proyek/{id}/edit', 'ProyekController@edit');
+Route::get('/proyek/{id}/daftarkans-staff', 'ProyekController@daftarstaff');
+Route::post('/proyek/{id}/daftarkans-staff', 'ProyekController@storestaff');
+Route::put('/proyek/{id}', 'ProyekController@update');
+Route::delete('/proyek/{id}', 'ProyekController@destroy');
