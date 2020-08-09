@@ -4,10 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProyekController extends Controller
 {
     //
+    public function karyawan($value='')
+    {
+    	$list = DB::table('pegawai')->get();
+        return view('proyek.karyawan', ['list' => $list]);
+    }
+
+    public function karyawanProyek($id='')
+    {
+    	$list = DB::table('proyek')->where('id_pegawai',$id)->get();
+        return view('proyek.karyawanProyek', ['list' => $list]);
+    }
+
     public function index($value='')
     {
     	$list = DB::table('proyek')->get();

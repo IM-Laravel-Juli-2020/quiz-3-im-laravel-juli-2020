@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('proyek.root');
 });
 
+
 Route::get('/proyek/create', 'ProyekController@create'); // menampilkan halaman form
 Route::post('/proyek', 'ProyekController@store'); // menyimpan data
 Route::get('/proyek', 'ProyekController@index'); // menampilkan semua
@@ -22,3 +23,7 @@ Route::get('/proyek/{id}', 'ProyekController@show'); // menampilkan detail item 
 Route::get('/proyek/{id}/edit', 'ProyekController@edit'); // menampilkan form untuk edit item
 Route::put('/proyek/{id}', 'ProyekController@update'); // menyimpan perubahan dari form edit
 Route::delete('/proyek/{id}', 'ProyekController@destroy'); // menghapus data dengan id
+
+
+Route::get('/karyawan', 'ProyekController@karyawan'); // menampilkan halaman form
+Route::get('/karyawan/{id_karyawan}/daftar-proyek', 'ProyekController@karyawanProyek'); // menampilkan halaman form
