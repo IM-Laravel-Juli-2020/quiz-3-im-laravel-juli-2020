@@ -62,6 +62,7 @@ class ProyekController extends Controller
 		    	'deskripsi' => $request->deskripsi,
 		    	'tanggal_mulai' => $request->tglm,
 		    	'tanggal_deadline' => $request->tgld,
+		    	'id_pegawai' => 1,
 		    ]
 		);
 		
@@ -85,6 +86,7 @@ class ProyekController extends Controller
 		    	'deskripsi' => $request->deskripsi,
 		    	'tanggal_mulai' => $request->tglm,
 		    	'tanggal_deadline' => $request->tgld,
+		    	'id_pegawai' => 1,
             ]
         );
         

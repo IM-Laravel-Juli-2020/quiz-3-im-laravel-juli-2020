@@ -13,6 +13,7 @@
 @endif
 <form action="{{url('proyek')}}" method="post">
   @csrf
+  @method('PUT')
   <div class="form-group">
     <label for="judul">Nama Proyek</label>
     <input type="text" class="form-control" name="nama_proyek" aria-describedby="nama_proyekHelp" value="{{old('nama_proyek',$post->nama_proyek)}}">
