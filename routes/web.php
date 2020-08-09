@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/);
 });
 
 Route::get('/items/create', 'ItemController@create'); // menampilkan halaman form
