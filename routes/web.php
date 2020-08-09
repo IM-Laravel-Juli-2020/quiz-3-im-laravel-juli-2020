@@ -33,3 +33,5 @@ Route::get('/proyek/{id}', 'ProyekController@show'); // menampilkan detail item 
 Route::get('/proyek/{id}/edit', 'ProyekController@edit');
 Route::put('/proyek/{id}', 'ProyekController@update');
 Route::delete('/proyek/{id}', 'ProyekController@destroy');
+Route::get('/karyawan', 'ProyekController@showKaryawan');
+Route::get('/karyawan/{id_karyawan}/daftar-proyek', 'ProyekController@showDetail');

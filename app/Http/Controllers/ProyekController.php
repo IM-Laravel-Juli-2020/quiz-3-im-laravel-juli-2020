@@ -128,29 +128,38 @@ class ProyekController extends Controller
         return view('proyek.image');
     }
 
-    public function createStaff()
+    public function createStaff($id)
     {
-        return view('proyek.create');
+        $proyek = DB::table($this->table)->where('idProyek', $id)->first(); //SELECT * FROM
+        return view('proyek.insertStaff', compact('proyek'));
     }
 
     public function storeStaff(Request $request)
     {
         //dd($request->all());
         $request->validate([
-            'nama' => 'required',
-            'deskripsi' => 'required',
-            'deadline' => 'required',
-            'id_manager' => 'required'
+            'idProyek' => 'required',
+            'idKaryawan' => 'required'
         ]);
 
-        $query = DB::table($this->table)->insert([
-            "nama_proyek" => $request["nama"],
-            "deskripsi_proyek" => $request["deskripsi"],
-            "tanggal_deadline" => $request["deadline"],
-            "id_manager" => $request["id_manager"]
-
+        $query = DB::table('penugasan')->insert([
+            "idProyek" => $request["idProyek"],
+            "idKaryawan" => $request["idKaryawan"]
         ]);
 
-        return redirect('/proyek')->with('success', 'Proyek Berhasil Disimpan');
+        return redirect('/proyek')->with('success', 'Penugasan Berhasil Disimpan');
+    }
+
+    public function showKaryawan()
+    {
+        $kar = DB::table('karyawan')->get(); //SELECT * FROM table
+        return view('proyek.karyawan', compact('kar'));
+    }
+
+    public function showDetail($id)
+    {
+        $kar = DB::table('karyawan')->where('idKaryawan', $id)->first(); //SELECT * FROM posts WHERE id
+        //dd($post);
+        return view('proyek.showDetail', compact('kar'));
     }
 }

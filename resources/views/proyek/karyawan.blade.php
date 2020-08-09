@@ -4,7 +4,7 @@
 <div class="mt-3 ml-3">
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Proyek Table</h3>
+            <h3 class="card-title">Karyawan Table</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -13,37 +13,26 @@
                 {{ session('success') }}
             </div>
             @endif
-            <a class="btn btn-primary mb-2" href="/proyek/create">Create New Proyek</a>
+            {{-- <a class="btn btn-primary mb-2" href="/proyek/create">Create New Proyek</a> --}}
             <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th style="width: 10px">#</th>
-                        <th>Judul</th>
-                        <th>Isi</th>
-                        <th>Created At</th>
-                        <th>Last Updated At</th>
+                        <th>Nama</th>
+                        <th>Jabatan</th>
                         <th>ID Manager</th>
                         <th style="width: 40px">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($proyek as $key => $p)
+                    @forelse ($kar as $key => $p)
                     <tr>
                         <td>{{ $key + 1 }}</td>
-                        <td>{{ $p->nama_proyek }}</td>
-                        <td>{{ $p->deskripsi_proyek }}</td>
-                        <td>{{ $p->tanggal_mulai }}</td>
-                        <td>{{ $p->tanggal_deadline }}</td>
+                        <td>{{ $p->nama }}</td>
+                        <td>{{ $p->jabatan }}</td>
                         <td>{{ $p->id_manager }}</td>
                         <td style="display: flex">
-                            <a href="/proyek/{{ $p->idProyek }}" class="btn btn-info btn-sm">Show</a>
-                            <a href="/proyek/{{ $p->idProyek }}/edit" class="btn btn-default btn-sm">Edit</a>
-                            <a href="/proyek/{{ $p->idProyek }}/daftarkan-staff" class="btn btn-warning btn-sm">Staff</a>
-                            <form action="/proyek/{{ $p->idProyek }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <input type="submit" value="!!DELETE!!" class="btn btn-danger btn-sm">
-                            </form>
+                            <a href='/karyawan/{{ $p->idKaryawan }}/daftar-proyek' class="btn btn-info btn-sm">Show</a>
                         </td>
                     </tr>
                     @empty

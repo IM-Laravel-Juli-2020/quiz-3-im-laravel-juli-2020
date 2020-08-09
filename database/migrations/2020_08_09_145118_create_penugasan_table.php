@@ -14,8 +14,10 @@ class CreatePenugasanTable extends Migration
     public function up()
     {
         Schema::create('penugasan', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->unsignedBigInteger('idKaryawan')->nullable();
+            $table->foreign('idKaryawan')->references('idKaryawan')->on('karyawan');
+            $table->unsignedBigInteger('idProyek')->nullable();
+            $table->foreign('idProyek')->references('idProyek')->on('proyek');
         });
     }
 
