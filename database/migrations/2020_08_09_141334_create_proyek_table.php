@@ -21,7 +21,7 @@ class CreateProyekTable extends Migration
             $table->date('tanggal_deadline', 0);
             $table->boolean('status')->default(false);
             $table->unsignedBigInteger('id_pegawai');
-            $table->foreign('id_pegawai')->references('id')->on('pegawai')->onDelete('CASCADE')->onUpdate('CASCADE');
+            // $table->foreign('id_pegawai')->references('id')->on('pegawai')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }
