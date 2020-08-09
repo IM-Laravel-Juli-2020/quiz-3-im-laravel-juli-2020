@@ -8,8 +8,8 @@ class ProyekController extends Controller
 {
     //
     public function gambar(){
-    	<img src=" {{('img/erd.png')}} ">
+    	
 
-    return view('/');
+    return view('/.gambar');
     }
 }
