@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +16,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/items/create', 'ItemController@create'); // menampilkan halaman form
-Route::post('/items', 'ItemController@store'); // menyimpan data
-Route::get('/items', 'ItemController@index'); // menampilkan semua
-Route::get('/items/{id}', 'ItemController@show'); // menampilkan detail item dengan id 
-Route::get('/items/{id}/edit', 'ItemController@edit'); // menampilkan form untuk edit item
-Route::put('/items/{id}', 'ItemController@update'); // menyimpan perubahan dari form edit
-Route::delete('/items/{id}', 'ItemController@destroy'); // menghapus data dengan id
+// Route Projek
+Route::get('/projek/create', 'ProjekController@create'); // menampilkan halaman form
+Route::post('/projek', 'ProjekController@store'); // menyimpan data
+Route::get('/projek', 'ProjekController@index'); // menampilkan semua
+Route::get('/projek/{id}', 'ProjekController@show'); // menampilkan detail item dengan id 
+Route::get('/projek/{id}/edit', 'ProjekController@edit'); // menampilkan form untuk edit item
+Route::put('/projek/{id}', 'ProjekController@update'); // menyimpan perubahan dari form edit
+Route::delete('/projek/{id}', 'ProjekController@destroy'); // menghapus data dengan id
+
+// Simple Projek Route
+Route::resource('projek', 'ProjekController');

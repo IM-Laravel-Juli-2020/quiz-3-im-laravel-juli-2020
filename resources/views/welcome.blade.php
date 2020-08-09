@@ -84,6 +84,12 @@
                     Sanbercode
                 </div>
 
+                <div class="img">
+                    
+                    <img src="{{ URL::to('/') }}/image/sanber_quiz_3_2020-08-09 213757.png" alt="">
+                
+                </div>
+
                 <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
