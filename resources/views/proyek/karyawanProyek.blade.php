@@ -10,7 +10,7 @@
   
 </ul>
 @forelse ($list as $key => $val)
-<li class="list-group-item">{{$key+1}} </li>
+<li class="list-group-item">{{$key+1}}. {{$val->nama_proyek}}</li>
 @empty
 <li class="list-group-item">KOSONG</li>
 @endforelse  
