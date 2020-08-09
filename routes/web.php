@@ -12,8 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::get('/proyek', function () {
+    return view('proyek');
+});
+
+Route::get('/proyek','ControllerKaryawan@create')
 
 Route::get('/items/create', 'ItemController@create'); // menampilkan halaman form
 Route::post('/items', 'ItemController@store'); // menyimpan data
