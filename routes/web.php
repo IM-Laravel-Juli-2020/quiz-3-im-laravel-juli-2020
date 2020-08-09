@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
-// Route Projek
+/ Route Projek
 Route::get('/projek/create', 'ProjekController@create'); // menampilkan halaman form
 Route::post('/projek', 'ProjekController@store'); // menyimpan data
 Route::get('/projek', 'ProjekController@index'); // menampilkan semua
@@ -27,3 +27,4 @@ Route::delete('/projek/{id}', 'ProjekController@destroy'); // menghapus data den
 
 // Simple Projek Route
 Route::resource('projek', 'ProjekController');
+
