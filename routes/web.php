@@ -11,14 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/items/create', 'ItemController@create'); // menampilkan halaman form
-Route::post('/items', 'ItemController@store'); // menyimpan data
-Route::get('/items', 'ItemController@index'); // menampilkan semua
-Route::get('/items/{id}', 'ItemController@show'); // menampilkan detail item dengan id 
-Route::get('/items/{id}/edit', 'ItemController@edit'); // menampilkan form untuk edit item
-Route::put('/items/{id}', 'ItemController@update'); // menyimpan perubahan dari form edit
-Route::delete('/items/{id}', 'ItemController@destroy'); // menghapus data dengan id
+Route::get('/', 'KaryawanController@image'); 
+Route::get('/proyek', 'KaryawanController@index'); 
+Route::get('/proyek/create', 'KaryawanController@create'); 
+Route::post('/proyek', 'KaryawanController@store'); 
+Route::get('/proyek/{id}/daftarkan-staff', 'KaryawanController@showStaff'); 
+Route::post('/proyek/{id}/daftarkan-staff', 'KaryawanController@saveStaff'); 
+Route::get('/artikel/{id}/edit', 'KaryawanController@edit'); 
+Route::put('/proyek/{id}', 'KaryawanController@update'); 
+Route::delete('/proyek/{id}', 'KaryawanController@delete'); 
