@@ -3,7 +3,7 @@
 @section('content')
 <div class="card">
 	<div class="card-header">
-  <h3 class="card-title">Input Proyek</h3>
+  <h3 class="card-title">Edit Proyek</h3>
 </div>
 <div class="card-body">
 <a href="{{ url('proyek') }}" class="btn btn-default mb-2">Kembali</a>
@@ -11,9 +11,9 @@
 @if(session('success'))
 <div class="alert alert-success">{{ session("success") }}</div>
 @endif
-<form action="{{url('proyek')}}" method="post">
+<form action="{{url('proyek'.$post->id)}}" method="post">
   @csrf
-  @method('PUT')
+  @method('put')
   <div class="form-group">
     <label for="judul">Nama Proyek</label>
     <input type="text" class="form-control" name="nama_proyek" aria-describedby="nama_proyekHelp" value="{{old('nama_proyek',$post->nama_proyek)}}">
