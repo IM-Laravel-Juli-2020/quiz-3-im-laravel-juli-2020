@@ -158,8 +158,14 @@ class ProyekController extends Controller
 
     public function showDetail($id)
     {
+        $proyek = DB::table('karyawan')
+            ->join('penugasan', 'karyawan.idKaryawan', '=', 'penugasan.idKaryawan')
+            ->join('proyek', 'penugasan.idProyek', '=', 'proyek.idProyek')
+            ->select('proyek.nama_proyek')
+            ->get();
         $kar = DB::table('karyawan')->where('idKaryawan', $id)->first(); //SELECT * FROM posts WHERE id
-        //dd($post);
-        return view('proyek.showDetail', compact('kar'));
+        //dd($kar);
+       // dd($proyek);
+        return view('proyek.showDetail', compact('kar'), compact('proyek'));
     }
 }
