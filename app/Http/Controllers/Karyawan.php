@@ -20,9 +20,13 @@ class Karyawan extends Controller
 
 		if($query->jabatan == 'staff')
 		{
-			$query1 = DB::table('staff_proyek')->where('staff_id', $id)->get();
+			$query1 = DB::table('staff_proyek')->where('karyawan_id', $id)->get();
+		}
+		if($query->jabatan == 'manager')
+		{
+			$query1 = DB::table('manager_proyek')->where('karyawan_id', $id)->get();
 		}
 		// dd($query);
-		return view('showkaryawan', compact('query'));
+		return view('showkaryawan', compact('query1'));
 	}
 }
