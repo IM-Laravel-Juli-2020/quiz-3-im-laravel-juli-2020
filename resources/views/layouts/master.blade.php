@@ -67,6 +67,12 @@
           <span>Proyek</span></a>
       </li>
 
+      <li class="nav-item">
+        <a class="nav-link" href="/karyawan">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Karyawan</span></a>
+      </li>
+
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
