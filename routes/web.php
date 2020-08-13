@@ -22,3 +22,5 @@ Route::get('/proyek/{id}', 'ProyekController@show'); // menampilkan detail item 
 Route::get('/proyek/{id}/edit', 'ProyekController@edit'); // menampilkan form untuk edit item
 Route::put('/proyek/{id}', 'ProyekController@update'); // menyimpan perubahan dari form edit
 Route::delete('/proyek/{id}', 'ProyekController@destroy'); // menghapus data dengan id
+Route::get('/proyek/{id}/daftarkan-staff', 'ProyekController@tambahStaff');
+Route::post('/proyek/{id}/daftarkan-staff', 'ProyekController@daftarStaff');

@@ -19,8 +19,6 @@ class CreateProyekTable extends Migration
             $table->string('deskripsi',255);
             $table->timestamps();
             $table->boolean('status')->default(false);
-            $table->unsignedBigInteger('staff_id')->nullable();
-            $table->foreign('staff_id')->references('id')->on('staff');
             $table->unsignedBigInteger('manager_id')->nullable();
             $table->foreign('manager_id')->references('id')->on('manager');
         });

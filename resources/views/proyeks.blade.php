@@ -1,8 +1,10 @@
-@include('layouts.master')
+@extends('layouts.master')
 
 @section('title','Data Proyek')
 
 @section('content')
+
+@parent
 <div class="mt-2">
         <a href="/pertanyaan/create" type="button" class="btn btn-primary btn-sm">Buat pertanyaan baru</a>
     </div>    
@@ -20,7 +22,6 @@
             <th scope="col">deskripsi</th>
             <th scope="col">Tanggal Mulai</th>
             <th scope="col">Tanggal Berakhir</th>
-            <th scope="col">id_staff</th>
             <th scope="col">id_manager</th>
             </tr>
         </thead>
@@ -32,7 +33,6 @@
             <td>{{$d->deskripsi}}</td>
             <td>{{$d->created_at}}</td>
             <td>{{$d->updated_at}}</td>
-            <td>{{$d->staff_id}}</td>
             <td>{{$d->manager_id}}</td>
             </tr>
     @empty
